@@ -1,25 +1,39 @@
 export default function decorate(block) {
+  block.classList.add('id-card');
+
   const rows = [...block.children];
 
-  // Add class to each row
   rows.forEach((row) => {
     row.classList.add('id-card-row');
+
+    const cells = [...row.children];
+
+    if (cells.length < 2) return;
+
+    const label = cells[0].textContent.trim().toLowerCase();
+
+    if (label === 'photo') {
+      const image = cells[1].querySelector('img');
+
+      if (image) {
+        image.classList.add('id-card-photo');
+      }
+    }
+
+    if (label === 'name') {
+      cells[1].classList.add('id-card-name');
+    }
+
+    if (label === 'designation') {
+      cells[1].classList.add('id-card-designation');
+    }
+
+    if (label === 'employee id') {
+      cells[1].classList.add('id-card-employee-id');
+    }
+
+    if (label === 'department') {
+      cells[1].classList.add('id-card-department');
+    }
   });
-
-  // Employee photo
-  const image = block.querySelector('img');
-
-  if (image) {
-    image.classList.add('id-card-photo');
-  }
-
-  // Employee name
-  const name = block.querySelector('h2');
-
-  if (name) {
-    name.classList.add('id-card-name');
-  }
-
-  // Add a class to the ID card itself
-  block.classList.add('id-card');
 }
