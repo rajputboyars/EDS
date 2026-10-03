@@ -1,21 +1,24 @@
 .hero {
-  position: relative;
   min-height: 520px;
-  padding: 80px 24px;
+  padding: 80px 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  overflow: hidden;
+}
+
+.hero .hero-content {
+  width: 100%;
+  max-width: 900px;
 }
 
 .hero .hero-title {
+  margin: 0 0 20px;
   font-size: 56px;
   line-height: 1.1;
-  margin: 0 0 20px;
 }
 
-.hero .hero-text {
+.hero p {
   max-width: 700px;
   margin: 0 auto 24px;
   font-size: 18px;
@@ -25,14 +28,8 @@
 .hero .hero-button {
   display: inline-block;
   padding: 14px 24px;
+  border: 1px solid currentcolor;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  border: 1px solid currentcolor;
-}
-
-.hero .hero-image img {
-  width: 100%;
-  height: auto;
-  display: block;
 }
