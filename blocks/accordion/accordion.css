@@ -1,0 +1,36 @@
+.accordion {
+  display: grid;
+  gap: 12px;
+}
+
+.accordion .accordion-item {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.accordion .accordion-button {
+  width: 100%;
+  padding: 18px 20px;
+
+  border: 0;
+  background: #fff;
+
+  text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.accordion .accordion-button:hover {
+  background: #f7f7f7;
+}
+
+.accordion .accordion-panel {
+  padding: 0 20px 20px;
+}
+
+.accordion .accordion-panel[hidden] {
+  display: none;
+}
