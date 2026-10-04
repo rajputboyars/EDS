@@ -1,0 +1,29 @@
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.stats .stats-item {
+  padding: 32px 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+}
+
+.stats .stats-number {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+
+.stats .stats-label {
+  font-size: 18px;
+}
+
+@media (width < 768px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
+}
