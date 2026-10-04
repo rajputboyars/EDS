@@ -20,3 +20,17 @@
   font-weight: 600;
   border: 1px solid currentcolor;
 }
+.cta.dark {
+  background: #111;
+  color: #fff;
+}
+
+.cta.dark .cta-button {
+  border-color: #fff;
+  color: #fff;
+}
+
+.cta.dark .cta-button:hover {
+  background: #fff;
+  color: #111;
+}
