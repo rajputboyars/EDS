@@ -1,4 +1,5 @@
-import { loadFragment } from '../../scripts/aem.js';
+// import { loadFragment } from '../../scripts/aem.js';
+import { loadFragment } from '../fragment/fragment.js';
 
 export default async function decorate(block) {
   // block = the Header block that EDS created.
