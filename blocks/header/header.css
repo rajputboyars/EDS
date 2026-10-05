@@ -26,9 +26,6 @@
 .header .header-link:hover {
   text-decoration: underline;
 }
-.header .nav-toggle {
-  display: none;
-}
 
 @media (width < 768px) {
   .header {
