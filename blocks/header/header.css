@@ -28,42 +28,131 @@
 }
 
 @media (width < 768px) {
+
   .header {
     position: relative;
   }
 
+
+  /*
+    Header itself becomes the positioning
+    container for the hamburger.
+  */
   .header .nav-toggle {
     display: flex;
+
+    position: absolute;
+    top: 14px;
+    right: 20px;
+
     width: 44px;
     height: 44px;
 
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
+    padding: 0;
 
-    margin-left: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
 
     border: 0;
     background: transparent;
+
     cursor: pointer;
+
+    z-index: 10;
   }
 
+
+  /* Hamburger lines */
   .header .nav-toggle span {
+    display: block;
+
     width: 24px;
     height: 2px;
-    background: currentcolor;
+
+    background: #111;
   }
+
 
   .header .header-nav {
-    display: none;
+    padding: 0 20px;
   }
 
-  .header.nav-open .header-nav {
+
+  /*
+    Change desktop horizontal layout
+    into mobile vertical layout.
+  */
+  .header .header-nav .default-content-wrapper {
+    min-height: 72px;
+
     display: flex;
     flex-direction: column;
+
     align-items: flex-start;
 
-    padding-top: 20px;
-    padding-bottom: 20px;
+    gap: 0;
+  }
+
+
+  /*
+    Brand stays visible even when
+    navigation menu is closed.
+  */
+  .header .header-nav .default-content-wrapper > p:first-child {
+    display: block;
+
+    margin: 0;
+    padding: 22px 60px 22px 0;
+
+    font-size: 20px;
+  }
+
+
+  /*
+    Hide menu items by default.
+
+    :not(:first-child) means:
+    all paragraphs except LearnEdge.
+  */
+  .header .header-nav .default-content-wrapper > p:not(:first-child) {
+    display: none;
+
+    width: 100%;
+    margin: 0;
+
+    padding: 14px 0;
+  }
+
+
+  /*
+    When JS adds .nav-open,
+    show all menu items.
+  */
+  .header.nav-open
+    .header-nav
+    .default-content-wrapper
+    > p:not(:first-child) {
+    display: block;
+  }
+
+
+  /*
+    Add some bottom spacing
+    when mobile menu is open.
+  */
+  .header.nav-open .header-nav .default-content-wrapper {
+    padding-bottom: 18px;
+  }
+
+
+  .header .header-link {
+    display: block;
+
+    width: 100%;
+
+    font-size: 18px;
   }
 }
